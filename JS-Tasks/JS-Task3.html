@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task3</title>
+</head>
+<body>
+    <h1>Multiply & Divide</h1>
+    <label for = "num1">1st Number: </label>
+    <input id = "num1" type = "number" placeholder = "Enter 1st number"/>
+    <br/><br/>
+    <label for = "num2">2nd Number: </label>
+    <input id = "num2" type = "number" placeholder = "Enter 2nd number"/>
+    <br/><br/>
+
+    <button onclick = "Multiply()">Multiply</button>
+    <button onclick = "Divide()">Divide</button>
+    <p id = "result">The Result Is: </p>
+    <a href = "./index.html">Back</a>
+
+
+    <script>
+        function Multiply(){
+            var num1 = Number.parseInt(document.getElementById("num1").value);
+            var num2 = Number.parseInt(document.getElementById("num2").value);
+
+            pdt = num1 * num2;
+            document.getElementById("result").innerHTML = "The Result Is:" + "<br>" + pdt;
+        }
+        function Divide(){
+            var num1 = Number.parseInt(document.getElementById("num1").value);
+            var num2 = Number.parseInt(document.getElementById("num2").value);
+
+            quotient = num1 / num2;
+            document.getElementById("result").innerHTML = "The Result Is:" + "<br>" + quotient;
+        }
+    </script>
+</body>
+</html>

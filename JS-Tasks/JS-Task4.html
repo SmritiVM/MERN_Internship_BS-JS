@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task4</title>
+</head>
+<body>
+    <button onclick = "displayDate()">show date</button>
+    <p id = "date"></p>
+    <button onclick = "displayTime()">show Time</button>
+    <p id = "time"></p>
+    <a href = "./index.html">Back</a>
+
+    <script>
+        function displayDate(){
+            const d = new Date();
+            document.getElementById("date").innerHTML = d.toLocaleDateString();
+        }
+
+        function displayTime(){
+            const d = new Date();
+            document.getElementById("time").innerHTML = d.toString();
+        }
+    </script>
+</body>
+</html>

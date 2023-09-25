@@ -1,0 +1,104 @@
+body {
+    font-family: arial;
+    transition: all 0.5s ease;
+    
+  }
+
+  .form-container {
+    padding: 40px;
+    width: 700px;
+    margin: 20px auto;
+    background-color: #f1f1f1;
+  }
+
+  .input-field {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  label {
+    margin-right: 25px;
+    margin-top: 5px;
+    width: 30%;
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .icon {
+    background: #f1f1f1;
+    color: black;
+    min-width: 40px;
+    max-height: 37px;
+    border: 2px solid #e2e2e2;
+    border-right: none;
+    text-align: center;
+    padding: 7px;
+  }
+
+  .inputs {
+    padding: 3px 10px;
+    border: 2px solid #e2e2e2;
+    width: 38%;
+  }
+
+  /* .state{
+    margin-left: -8px;
+  } */
+
+  /* .host-container{
+    margin-left: -50px;
+  } */
+
+ .vertical-align{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+ } 
+   .rad_button {
+    margin: 10px; 
+    
+  } 
+
+  .textarea {
+    padding: 8px;
+    border: 2px solid #e2e2e2;
+    width: 38%;
+    height: 75px;
+    
+  }
+
+  .textarea-icon {
+    background: #f1f1f1;
+    color: black;
+    min-width: 40px;
+    max-height: max-content;
+    border: 2px solid #e2e2e2;
+    border-right: none;
+    text-align: center;
+    padding: 7px;
+    margin-left: 30px;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  .submit {
+    color: white;
+    background: #ee9a25;
+    padding: 9px 25px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #c9c9c9;
+  }
+
+  .submit:hover {
+    background: #d1871e;
+  }
+
+  
+  .message {
+    margin-left: -30px;
+  }
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task1</title>
+</head>
+<body>
+    <h1>Reverse Number</h1>
+    <label for = "num">Number: </label>
+    <input id = "num" type = "number" placeholder = "Enter number"/>
+    <button onclick = "reverse()">Reverse</button>
+    <p id = "result">Result: </p>
+    <a href = "./index.html">Back</a>
+    <script>
+        function reverse(){
+            var n = document.getElementById("num").value;
+            let rev = 0;
+            while (n > 0){
+                digit = n % 10;
+                rev = rev * 10 + digit;
+                n = parseInt(n / 10);
+            }
+            document.getElementById("result").innerHTML = "Result: " + rev;
+        }
+    </script>
+</body>
+</html>

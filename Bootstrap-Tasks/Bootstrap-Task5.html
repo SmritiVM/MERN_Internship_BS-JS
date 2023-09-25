@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bootstrap-Task5</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css">
+  <link href = "./style-task5.css" rel = "stylesheet" type = "text/css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form action="" class = "was-validated">
+      
+        <div class="input-field">
+          <label for = "fname" class = "form-label">First Name</label>
+          
+          <i class="fa fa-user icon"></i>
+          <div class = "vertical-align">
+          <input type="text" class="inputs form-control" id = "fname" placeholder = "First Name" required>
+          <div class = "invalid-feedback">Please supply your first name</div>
+          </div>
+        </div>
+        
+        <div class="input-field">
+          <label for = "lname" class = "form-label">Last Name</label>
+          <i class="fa-solid fa-user icon"></i>
+          <div class = "vertical-align">
+          <input type="text" class="inputs form-control" id = "lname" placeholder = "Last Name" required>
+          <div class = "invalid-feedback">Please supply your last name</div>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for = "email" class = "form-label">Email</label>
+          <i class="fa fa-envelope icon"></i>
+          <div class = "vertical-align">
+          <input type="email" class="inputs form-control" placeholder = "E-Mail Address" id = "email" required>
+          <div class = "invalid-feedback">Please supply your email address</div>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for = "phone" class = "form-label">Phone #</label>
+          <i class="fa fa-phone icon"></i>
+          <div class = "vertical-align">
+          <input type="number" class="inputs form-control" placeholder = "(845)555-1212" id = "phone" required>
+          <div class = "invalid-feedback">Please supply your phone number</div>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for = "address" class = "form-label">Address</label>
+          <i class="fa fa-home icon"></i>
+          <div class = "vertical-align">
+          <input type="text" class="inputs form-control" placeholder = "Address" id = "address" required>
+          <div class = "invalid-feedback">Please supply your street address</div>
+          </div>
+        </div>
+
+        
+        <div class="input-field">
+          <label for = "city" class = "form-label">City</label>
+          <i class="fa fa-home icon"></i>
+          <div class = "vertical-align">
+          <input type="text" class="inputs form-control" placeholder = "city" id = "city" required>
+          <div class = "invalid-feedback">Please supply your city</div>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label class = "form-label">State</label>
+          <i class="fa fa-list icon"></i>
+          <select name="State" id="" class="inputs">
+            <option value="0">Please select your state</option>
+            <option value="1">State 1</option>
+            <option value="2">State 2</option>
+            <option value="3">State 3</option>
+            <option value="4">State 4</option>
+            <option value="5">State 5</option>
+          </select>
+        </div>
+
+
+        <div class = "input-field">
+          <label class = "form-label">Do you have hosting?</label>
+          <div class = "vertical-align">
+          <div><input class = "rad_button" type="radio" name="gender" value="yes"/>Yes</div>
+          <div><input class = "rad_button" type="radio" name="gender" value="no"/>No</div>
+          </div>
+        </div>
+
+        <div class="input-field">
+            <label class="message form-label">Project Description</label>
+            <i class="fa-solid fa-pencil textarea-icon"></i>
+            <textarea class="textarea" placeholder="Project Description"></textarea>
+          </div>
+        
+      
+
+      
+
+      <div class="button">
+        <button type="submit" class="submit">Send <span><i class = "fa fa-paper-plane"></i></span></button>
+        
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

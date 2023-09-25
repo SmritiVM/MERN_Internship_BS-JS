@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css">
+    <style>
+        body{
+            font-family: Arial Narrow;
+        }
+        .form-container{
+            padding: 40px;
+            width: 300px;
+            margin: 20px auto;
+            background-color: #f1f1f1;
+        }
+        
+        h1{
+            font-weight: 100;
+            font-style: italic;
+            font-family: serif;
+            text-align: center;
+        }
+        .input-field {
+            display: flex;
+            margin-bottom: 15px;
+            
+        }
+        .input-box{
+            width: 270px;
+            font-family: Arial Narrow;
+            font-size: 15px;
+        }
+        .icon {
+            background: #f1f1f1;
+            color: black;
+            border: 2px solid #e2e2e2;
+            border-right: none;
+            text-align: center;
+            padding: 7px;
+        }
+        button{
+            background-color: rgb(0, 94, 255);
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+            font-family: Arial Narrow;
+            font-size: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class = 'form-container'>
+        <form>
+            <h1>Instagram</h1>
+            <div class = "input-field">
+                <i class = "fa fa-user icon"></i>
+                <input type = "text" id = "uname" placeholder="Username" class = "input-box"/>
+            </div>
+            <p id = "uname_err" style = "color: red;"></p>
+            <div class = "input-field">
+                <i class = "fa fa-solid fa-lock icon"></i>
+                <input type = "password" id = "pwd" placeholder="Password" class = "input-box"/>
+            </div>
+            <p id = "pwd_err" style = "color: red"></p>
+            <button onclick = "return validate()">Log in</button>
+            <div>
+                <input type = "checkbox" id = "remember">Remember me
+                <a href = "#" style = "margin-left: 40px">Forgot password?</a>
+            </div>
+            
+        </form>
+        
+    </div>
+    <p style = "text-align: center;">Don't have an account yet? <a href = "#">Sign up here</a></p>
+    <a href = "./index.html">Back</a>
+
+
+    <script>
+        function validate(){
+            uname = document.getElementById("uname").value;
+            pwd = document.getElementById("pwd").value;
+            var valid = true;
+            var lower_case = /[a-z]/g;
+            var upper_case = /[A-Z]/g;
+            var numbers = /[0-9]/g;
+            var special = /[!@#$%^&*()]/g;
+
+            if (uname == ""){
+                valid = false;
+                document.getElementById("uname_err").innerText = "Username cannot be empty";
+                document.getElementById("uname").style.border = "2px solid red";
+
+            }
+
+            if (!pwd.match(lower_case)){
+                valid = false;
+                document.getElementById("pwd_err").innerHTML = "Password must be of minimum length 8 and contain lowercase, uppercase, special and numeric characters";
+                document.getElementById("pwd").style.border = "2px solid red";
+            }
+            else if (!pwd.match(upper_case)){
+                valid = false;
+                document.getElementById("pwd_err").innerHTML = "Password must be of minimum length 8 and contain lowercase, uppercase, special and numeric characters";
+                document.getElementById("pwd").style.border = "2px solid red";
+            }
+            else if (!pwd.match(numbers)){
+                valid = false;
+                document.getElementById("pwd_err").innerHTML = "Password must be of minimum length 8 and contain lowercase, uppercase, special and numeric characters";
+                document.getElementById("pwd").style.border = "2px solid red";
+            }
+            else if (!pwd.match(special)){
+                valid = false;
+                document.getElementById("pwd_err").innerHTML = "Password must be of minimum length 8 and contain lowercase, uppercase, special and numeric characters";
+                document.getElementById("pwd").style.border = "2px solid red";
+            }
+
+
+            return valid;
+        }
+    </script>
+</body>
+</html>

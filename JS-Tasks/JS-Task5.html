@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task5</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for = "name">Name: </label></td>
+                <td><input type = "text" id = "name"/></td>
+                <td><label id = "name_err" style = "color: red;"></label></td>
+            </tr>
+            <tr>
+                <td><label for = "email">Email: </label></td>
+                <td><input type = "email" id = "email"/></td>
+                <td><label id = "email_err" style = "color: red;"></label></td>
+            </tr>
+            <tr>
+                <td><label for = "website">Website: </label></td>
+                <td><input type = "text" id = "website"/></td>
+                <td><label id = "website_err" style = "color: red;"></label></td>
+            </tr>
+            <tr>
+                <td><label for = "msg">Message: </label></td>
+                <td><textarea id = "msg"></textarea></td>
+                <td><label id = "msg_err" style = "color: red;"></label></td>
+            </tr>
+        </table>
+        <button onclick = "return verify()">Submit</button>
+        <br/>
+        <a href = "./index.html">Back</a>
+
+    </form>
+
+    <script>
+        function verify(){
+            var name = document.getElementById("name").value;
+            var email = (document.getElementById("email").value).split("");
+            var website = (document.getElementById("website").value).split("");
+            var msg = document.getElementById("msg").value;
+            let flag = false;
+
+            
+            if (name == ""){
+                document.getElementById("name_err").innerHTML = "This field is required";
+                document.getElementById("name").style.border = "2px solid red";
+                flag = true;
+            }
+            if (!("@" in email) || !("." in email)){
+                document.getElementById("email_err").innerHTML = "A valid email address is required";
+                document.getElementById("email").style.border = "2px solid red";
+                flag = true;
+            }
+            if (!("." in website)){
+                document.getElementById("website_err").innerHTML = "A valid url is required";
+                document.getElementById("website").style.border = "2px solid red";
+                flag = true;
+            }
+            if (msg == ""){
+                document.getElementById("msg_err").innerHTML = "This field is required";
+                document.getElementById("msg").style.border = "2px solid red";
+                flag = true;
+            }
+
+            return (!flag);
+        }
+    </script>
+</body>
+</html>

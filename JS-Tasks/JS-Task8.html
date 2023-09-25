@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task8</title>
+    <style>
+        #grad {
+            background-image: linear-gradient(180deg, rgb(249, 249, 135), violet);
+        }
+        h1{
+            color:blue;
+            text-align: center;
+
+        }
+
+        .button_center{
+            text-align: center;
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .right{
+            text-align: right;
+        }
+        #register{
+            padding: 5px 10px;
+            color: white;
+            background-color: red;
+            font-family: 'Times New Roman';
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body id = "grad">
+    <h1>Registration form</h1>
+    <form >
+        <table border = "0" cellspacing = "0" cellpadding = "5" class = "center">
+            <tr>
+                <th><label for = "fname">First Name</label></th>
+                <td colspan = "4"><input type = "text" size = "38" name = "fname" id = "fname" onkeyup="checkFName()"/></td>
+                <td><label id = "fname_err" style = "color: red;">POOR</label></td>
+            </tr>
+            
+            <tr>
+                <th><label for = "lname">Last Name</label></th>
+                <td colspan = "4"><input type = "text" size = "38" name = "lname" id = "lname" onkeyup="checkLName()"/></td>
+                <td><label id = "lname_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            <tr>
+                <th><label for = "email_id">Email</label></th>
+                <td colspan = "4"><input type = "text" size = "38" name = "email_id" id = "email" onkeyup="checkEmail()"/></td>
+                <td><label id = "email_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            <tr>
+                <th><label for = "pwd">Password</label></th>
+                <td colspan = "4"><input type = "password" size = "38" name = "pwd" id = "pwd" onkeyup="checkPwd()"/></td>
+                <td><label id = "pwd_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            <tr>
+                <th><label for = "rpwd">Re-enter Password</label></th>
+                <td colspan = "4"><input type = "password" size = "38" name = "rpwd" id = "rpwd" onkeyup="checkRPwd()"/></td>
+                <td><label id = "rpwd_err" style = "color: red;">POOR OR MISMATCH</label></td>
+            </tr>
+
+            
+            <tr>
+                <th rowspan = "2"><label for = "gender">Gender</label></th>
+                <td colspan = "4"><input type = "radio" name = "gender"/>Male</td>
+                
+            </tr>
+
+            <tr>
+                <td colspan = "4"><input type = "radio" name = "gender"/>Female</td>
+            </tr>
+            <tr>
+                <th><label for = "age">Age</label></th>
+                <td colspan = "4"><input type = "text" size = "38" name = "age" id = "age" onkeyup="checkAge()"/></td>
+                <td><label id = "age_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            <tr>
+                <th><label for = "phno">Phone Number</label></th>
+                <td colspan = "4"><input type = "tel" size = "38" name = "phno" id = "phno" onkeyup="checkPhno()"/></td>
+                <td><label id = "phno_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            
+            <tr>
+                <th><label for = "address">Address</label></th>
+                <td colspan = "4"><textarea rows = "5" cols = "40" name = "address" id = "address" onkeyup="checkAddress()"></textarea></td>
+                <td><label id = "address_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            <tr>
+                <th><label for = "state">State</label></th>
+                <td colspan = "4"><input type = "text" size = "38" name = "state" id = "state" onkeyup="checkState()"/></td>
+                <td><label id = "state_err" style = "color: red;">POOR</label></td>
+            </tr>
+
+            <tr>
+                <th><label for = "country">Country</label></th>
+                <td colspan = "4"><select>
+                    <option>Choose your country</option>
+                    <option>India</option>
+                    <option>Japan</option>
+                    <option>US</option>
+                    <option>Singapore</option>
+                    <option>England</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <th><label for = "lang">Languages known</label></th>
+                <td><input type = "checkbox" name = "lang"/>English</td>
+                <td><input type = "checkbox" name = "lang"/>Kannada</td>
+                <td><input type = "checkbox" name = "lang"/>Hindi</td>
+                <td><input type = "checkbox" name = "lang"/>Telugu</td>
+
+            </tr>
+
+            <tr>
+                <td colspan = "5"><input type = "checkbox" checked/>Hereby I declare all the given details are true</td>
+            </tr>
+
+            <tr>
+                <td colspan = "5">
+                    <div class = "right">
+                        Log in to <a href = "https://www.ethnus.com">Ethnus</a> website
+                    </div>
+                    </td>
+            </tr>
+
+
+        </table>
+
+        <br/>
+        <div class = "button_center">
+        <input type = "submit" value = "REGISTER" id = "register" align = "center" />
+        <br/>
+        <a href = "./index.html">Back</a>
+
+        </div>
+    </form>
+    <script>
+       
+        function checkFName(){
+            var fname = document.getElementById("fname").value;
+            if(fname.length == 0){
+                document.getElementById("fname_err").innerText = "POOR";
+                document.getElementById("fname_err").style.color = "red";
+            }
+            else{
+                document.getElementById("fname_err").innerText = "GOOD";
+                document.getElementById("fname_err").style.color = "green";
+            }
+        }
+
+        function checkLName(){
+            var lname = document.getElementById("lname").value;
+            if(lname.length == 0){
+                document.getElementById("lname_err").innerText = "POOR";
+                document.getElementById("lname_err").style.color = "red";
+            }
+            else{
+                document.getElementById("lname_err").innerText = "GOOD";
+                document.getElementById("lname_err").style.color = "green";
+            }
+        }
+
+        function checkEmail(){
+            var email = document.getElementById("email").value;
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            if(!email.match(emailReg) || email.length == 0){
+                document.getElementById("email_err").innerText = "POOR";
+                document.getElementById("email_err").style.color = "red";
+            }
+           
+            else{
+                document.getElementById("email_err").innerText = "GOOD";
+                document.getElementById("email_err").style.color = "green";
+            }
+        }
+
+        function checkPwd(){
+            var pwd = document.getElementById("pwd").value;
+            if(pwd.length < 6 ){
+                document.getElementById("pwd_err").innerText = "POOR";
+                document.getElementById("pwd_err").style.color = "red";
+            }
+            else{
+                document.getElementById("pwd_err").innerText = "GOOD";
+                document.getElementById("pwd_err").style.color = "green";
+            }
+        }
+
+        function checkRPwd(){
+            var rpwd = document.getElementById("rpwd").value;
+            var pwd = document.getElementById("pwd").value;
+            if(rpwd.length == 0 || rpwd != pwd){
+                document.getElementById("rpwd_err").innerText = "POOR OR MISMATCH";
+                document.getElementById("rpwd_err").style.color = "red";
+            }
+            else{
+                document.getElementById("rpwd_err").innerText = "GOOD";
+                document.getElementById("rpwd_err").style.color = "green";
+            }
+        }
+
+        function checkAge(){
+            var age = Number.parseInt(document.getElementById("age").value);
+            if(age < 0 || age > 100){
+                document.getElementById("age_err").innerText = "POOR";
+                document.getElementById("age_err").style.color = "red";
+            }
+            else{
+                document.getElementById("age_err").innerText = "GOOD";
+                document.getElementById("age_err").style.color = "green";
+            }
+        }
+
+        function checkPhno(){
+            var phno = document.getElementById("phno").value;
+            if(phno.length < 10){
+                document.getElementById("phno_err").innerText = "POOR";
+                document.getElementById("phno_err").style.color = "red";
+            }
+            else{
+                document.getElementById("phno_err").innerText = "GOOD";
+                document.getElementById("phno_err").style.color = "green";
+            }
+        }
+
+        function checkAddress(){
+            var address = document.getElementById("address").value;
+            if(address.length < 5){
+                document.getElementById("address_err").innerText = "POOR";
+                document.getElementById("address_err").style.color = "red";
+            }
+            else{
+                document.getElementById("address_err").innerText = "GOOD";
+                document.getElementById("address_err").style.color = "green";
+            }
+        }
+
+        function checkState(){
+            var state = document.getElementById("state").value;
+            if(state.length < 3){
+                document.getElementById("state_err").innerText = "POOR";
+                document.getElementById("state_err").style.color = "red";
+            }
+            else{
+                document.getElementById("state_err").innerText = "GOOD";
+                document.getElementById("state_err").style.color = "green";
+            }
+        }
+
+    </script>
+</body>
+</html>
